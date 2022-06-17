@@ -15,7 +15,6 @@ function Weather() {
         response.on("data",function(data){
           try {
             parsedData = JSON.parse(data);
-            console.log(`log1: ${JSON.stringify(parsedData.main)} and ${JSON.stringify(parsedData.weather[0].desc)}`);
             resolve(parsedData)
           } catch (e) {
             reject(e.message);
@@ -37,7 +36,7 @@ function Weather() {
     iconurl = "http://openweathermap.org/img/wn/"+icon+"@2x.png";
     return (
       <div className={styles.card}>
-        <h2>Today's Weather &rarr;</h2>
+        <h2>{`Today's Weather`} &rarr;</h2>
         <p>Temperature: {temperature}°C</p>
         <p>Condition: {desc}</p>
         <Image layout="fill" loader={() => iconurl} src={iconurl} alt="Weather Icon" />
@@ -47,7 +46,7 @@ function Weather() {
   .catch(error => {
     return (
         <div className={styles.card}>
-          <h2>Today's Weather &rarr;</h2>
+          <h2>{`Today's Weather`} &rarr;</h2>
           <p>{error.message}</p>
         </div>
     );
@@ -76,7 +75,7 @@ function Weather() {
 
   return (
     <div className={styles.card}>
-      <h2>Today's Weather &rarr;</h2>
+      <h2>{`Today's Weather`} &rarr;</h2>
       <p>Temperature: 26.3°C</p>
       <p>Condition: few clouds</p>
       <img src={iconurl} alt='few clouds'/>

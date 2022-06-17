@@ -14,7 +14,6 @@ import {
   Tooltip,
   Legend,
 } from 'chart.js';
-import Link from 'next/link';
 
 ChartJS.register(
   CategoryScale,

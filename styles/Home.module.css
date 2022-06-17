@@ -50,8 +50,13 @@
   text-align: center;
 }
 
-a.brandname, span.brandname {
+span.brandname {
   color: rgb(0, 177, 0);
+  cursor: pointer;
+}
+
+span.brandname:hover {
+  text-decoration: underline;
 }
 
 .description {
@@ -87,6 +92,7 @@ a.brandname, span.brandname {
   border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
   max-width: 300px;
+  cursor: pointer;
 }
 
 .warningcard {

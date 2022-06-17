@@ -1,7 +1,5 @@
 import styles from '../styles/Home.module.css'
 import Image from 'next/image'
-// import request from 'superagent'
-import axios from 'axios'
 const https = require("https");
 
 function Weather() {
@@ -38,20 +36,20 @@ function Weather() {
     console.log(`temp: ${temperature} and desc: ${desc}`);
     iconurl = "http://openweathermap.org/img/wn/"+icon+"@2x.png";
     return (
-      <a href="#" className={styles.card}>
+      <div className={styles.card}>
         <h2>Today's Weather &rarr;</h2>
         <p>Temperature: {temperature}°C</p>
         <p>Condition: {desc}</p>
         <Image layout="fill" loader={() => iconurl} src={iconurl} alt="Weather Icon" />
-      </a>
+      </div>
     );
   })
   .catch(error => {
     return (
-      <a href="#" className={styles.card}>
-        <h2>Today's Weather &rarr;</h2>
-        <p>{error.message}</p>
-      </a>
+        <div className={styles.card}>
+          <h2>Today's Weather &rarr;</h2>
+          <p>{error.message}</p>
+        </div>
     );
   });
 
@@ -77,13 +75,12 @@ function Weather() {
   var iconurl = "http://openweathermap.org/img/wn/02d@2x.png";
 
   return (
-    <a href="#" className={styles.card}>
+    <div className={styles.card}>
       <h2>Today's Weather &rarr;</h2>
       <p>Temperature: 26.3°C</p>
       <p>Condition: few clouds</p>
       <img src={iconurl} alt='few clouds'/>
-      {/* <Image loader={() => iconurl} src={iconurl} alt="Weather Icon" /> */}
-    </a>
+    </div>
   );
 
 

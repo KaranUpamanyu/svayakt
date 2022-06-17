@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import styles from '../../styles/Home.module.css'
 import { Line } from 'react-chartjs-2'
-// import ReactLoading from "react-loading";
+import Link from 'next/link'
 
 
 import {
@@ -14,6 +14,7 @@ import {
   Tooltip,
   Legend,
 } from 'chart.js';
+import Link from 'next/link';
 
 ChartJS.register(
   CategoryScale,
@@ -67,7 +68,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-        🍆Brinjal Market: <a className={styles.brandname} href="/">SvayaKT!</a>
+        🍆Brinjal Market: <Link href="/"><span className={styles.brandname}>SvayaKT!</span></Link>
         </h1>
 
         <br/><br/>
@@ -115,19 +116,19 @@ export default function Home() {
       <br/><br/>
 
       <div className={styles.grid}>
-        <a href="#" className={styles.card}>
+        <div className={styles.card}>
           <h2>Costs &rarr;</h2>
           <p><b>Today:</b> ₹12</p>
           <p><b>Tomorrow:</b> ₹21.1</p>
           <p><b>Next week:</b> ₹41</p>
-        </a>
+        </div>
 
-        <a href="#" className={styles.card}>
+        <div className={styles.card}>
           <h2>Arrival &rarr;</h2>
           <p><b>Today:</b> 32 tons</p>
           <p><b>Tomorrow:</b> 21 tons</p>
           <p><b>Next week:</b> 2 tons</p>
-        </a>
+        </div>
       </div>
 
       </main>
@@ -138,7 +139,6 @@ export default function Home() {
           </span>
           &nbsp; by 1BY18IS 004/024/057
       </footer>
-      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     </div>
   )
 }

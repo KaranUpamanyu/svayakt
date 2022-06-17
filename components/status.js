@@ -21,7 +21,7 @@ function Status() {
   .then((data) => {
     console.log(data.humidity)
     return (
-      <a href="#" className={styles.card}>
+      <div className={styles.card}>
         <h2>Status &rarr;</h2>
         <p>N: {data.n}</p>
         <p>P: {data.p}</p>
@@ -29,7 +29,7 @@ function Status() {
         <p>Humidity: {data.humidity}</p>
         <p>pH: {data.ph}</p>
         <p>Rainfall: {data.rainfall}</p>
-      </a>
+      </div>
     );
   })
 
@@ -44,7 +44,7 @@ function Status() {
 
 
   return (
-    <a href="#" className={styles.card}>
+    <dov className={styles.card}>
       <h2>Status &rarr;</h2>
       <p>N: 93</p>
       <p>P: 56</p>
@@ -52,7 +52,7 @@ function Status() {
       <p>Humidity: 82.06</p>
       <p>pH: 6.98</p>
       <p>Rainfall: 185.28</p>
-    </a>
+    </dov>
   );
 }
 

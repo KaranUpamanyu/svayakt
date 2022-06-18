@@ -76,7 +76,7 @@ function Weather() {
   return (
     <div className={styles.card}>
       <h2>{`Today's Weather`} &rarr;</h2>
-      <p>Temperature: 26.3°C</p>
+      <p>Temperature: 24.3°C</p>
       <p>Condition: few clouds</p>
       <img src={iconurl} alt='few clouds'/>
     </div>

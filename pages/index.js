@@ -3,8 +3,40 @@ import styles from '../styles/Home.module.css'
 import Weather from '../components/weather'
 import Status from '../components/status'
 import Link from 'next/link'
+import {GraphQLClient, gql} from 'graphql-request'
 
-export default function Home() {
+const graphcms = new GraphQLClient(`https://api-ap-south-1.graphcms.com/v2/cl4doen4r64qw01xu8aht6kqs/master`)
+
+let myDate = new Date()
+console.log(myDate)
+var today = myDate.toISOString().split('T')[0]
+console.log(today)
+
+const QUERY = gql`
+{
+  dailyRecords(where: {date: "2011-01-13"}) {
+    date
+    n
+    p
+    k
+    humidity
+    ph
+    rainfall
+  }
+}`
+
+export async function getStaticProps() {
+  const posts = await graphcms.request(QUERY);
+  return {
+    props: {
+      posts
+    },
+    revalidate: 30
+  };
+}
+
+export default function Home( {posts} ) {
+
   return (
     <div className={styles.container}>
       <Head>
@@ -23,14 +55,107 @@ export default function Home() {
         </p>
 
         <div className={styles.grid}>
-          <div href="/" className={styles.warningcard}>
+          <div className={styles.warningcard}>
             <h2>⚠️Warning &rarr;</h2>
             <p>Soil moisture under recommended levels</p>
           </div>
 
           <Weather/>
 
-          <Status/>
+          {console.log(posts)}
+
+
+          <div className={styles.card}>
+            {/* <h2>Date: {posts.dailyRecords[0].date} &rarr;</h2> */}
+            <h2>Status &rarr;</h2>
+            <p>N: {posts.dailyRecords[0].n}</p>
+            <p>P: {posts.dailyRecords[0].p}</p>
+            <p>K: {posts.dailyRecords[0].k}</p>
+            <p>Humidity: {posts.dailyRecords[0].humidity}</p>
+            <p>pH: {posts.dailyRecords[0].ph}</p>
+            <p>Rainfall: {posts.dailyRecords[0].rainfall}</p>
+          </div>
+
+          {/* {posts.dailyRecords.map((data) => {
+            <div className={styles.card}>
+              <h2>Date: {data.date} &rarr;</h2>
+              <p>N: {data.n}</p>
+              <p>P: {data.p}</p>
+              <p>K: {data.k}</p>
+              <p>Humidity: {data.humidity}</p>
+              <p>pH: {data.ph}</p>
+              <p>Rainfall: {data.rainfall}</p>
+            </div>
+          })} */}
+
+
+
+
+          {/* <div className={styles.card}>
+            <h2>Status &rarr;</h2>
+            <p>Date: {data.date}</p>
+            <p>N: {data.n}</p>
+            <p>P: {data.p}</p>
+            <p>K: {data.k}</p>
+            <p>Humidity: {data.humidity}</p>
+            <p>pH: {data.ph}</p>
+            <p>Rainfall: {data.rainfall}</p>
+          </div> */}
+
+
+          {/* <Status/> */}
+
+
+
+
+
+
+
+
+
+
+          {/* */}
+          {/* */}
+          {/* */}
+          {/* */}
+          {/* */}
+          {/* */}
+          {/* */}
+          {/* */}
+          {/* */}
+          {/* */}
+          {/* */}
+          {/* */}
+          {/* */}
+          {/* */}
+          {/* */}
+          {/* */}
+          {/* */}
+          {/* */}
+          {/* */}
+          {/* */}
+          {/* */}
+          {/* */}
+          {/* */}
+          {/* */}
+          {/* */}
+          {/* */}
+          {/* */}
+          {/* */}
+          {/* */}
+          {/* */}
+          {/* */}
+          {/* */}
+          {/* */}
+          {/* */}
+          {/* */}
+          {/* */}
+          {/* */}
+          {/* */}
+          {/* */}
+          {/* */}
+          {/* */}
+          {/* */}
 
           <Link href={`/markets/tomato`}>
             <div className={styles.card}>

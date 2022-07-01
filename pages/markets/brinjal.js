@@ -28,7 +28,7 @@ ChartJS.register(
 export default function Home() {
 
   const state = {
-    labels: ['Today', 'Sunday (19th June)', 'Monday (20th June)', 'Tuesday (21th June)', 'Wednesday (22th June)', 'Thursday (23th June)', 'Friday (23th June)'],
+    labels: ['Today', 'Tomorrow', '', '', '', '', 'In a Week'],
     datasets: [
       {
         label: 'Cost (1000₹/ton)',
@@ -43,7 +43,8 @@ export default function Home() {
   }
 
   const state2 = {
-    labels: ['Today', 'Sunday (19th June)', 'Monday (20th June)', 'Tuesday (21th June)', 'Wednesday (22th June)', 'Thursday (23th June)', 'Friday (23th June)'],
+    labels: ['Today', 'Tomorrow', '', '', '', '', 'In a Week'],
+    // labels: ['Today', 'Sunday (19th June)', 'Monday (20th June)', 'Tuesday (21th June)', 'Wednesday (22th June)', 'Thursday (23th June)', 'Friday (23th June)'],
     datasets: [
       {
         label: 'Arrival (metric tons)',

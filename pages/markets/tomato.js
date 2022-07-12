@@ -28,7 +28,8 @@ ChartJS.register(
 export default function Home() {
 
   const state = {
-    labels: ['Today', 'Sunday (19th June)', 'Monday (20th June)', 'Tuesday (21th June)', 'Wednesday (22th June)', 'Thursday (23th June)', 'Friday (23th June)'],
+    labels: ['Today (12th July)', 'Wednesday (13th July)', 'Thursday (14th July)', 'Friday (15th July)', 'Saturday (16th July)', 'Sunday (17th July)', 'Monday- Next Week (18th July)'],
+    // labels: ['Today (12th July)', 'Wednesday (13th July)', 'Thursday (14th July)', 'Friday (15th July)', 'Saturday (16th July)', 'Sunday (16th July)', 'Monday- Next Week (15th July)'],
     datasets: [
       {
         label: 'Cost (1000₹/ton)',
@@ -43,7 +44,8 @@ export default function Home() {
   }
 
   const state2 = {
-    labels: ['Today', 'Sunday (19th June)', 'Monday (20th June)', 'Tuesday (21th June)', 'Wednesday (22th June)', 'Thursday (23th June)', 'Friday (23th June)'],
+    labels: ['Today (12th July)', 'Wednesday (13th July)', 'Thursday (14th July)', 'Friday (15th July)', 'Saturday (16th July)', 'Sunday (17th July)', 'Monday- Next Week (18th July)'],
+    // labels: ['Today', 'Sunday (19th June)', 'Monday (20th June)', 'Tuesday (21th June)', 'Wednesday (22th June)', 'Thursday (23th June)', 'Friday (23th June)'],
     datasets: [
       {
         label: 'Arrival (metric tons)',

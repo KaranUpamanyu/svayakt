@@ -7,14 +7,14 @@ import {GraphQLClient, gql} from 'graphql-request'
 
 const graphcms = new GraphQLClient(`https://api-ap-south-1.graphcms.com/v2/cl4doen4r64qw01xu8aht6kqs/master`)
 
-let myDate = new Date()
-console.log(myDate)
-var today = myDate.toISOString().split('T')[0]
-console.log(today)
+// let myDate = new Date()
+// console.log(myDate)
+// var today = myDate.toISOString().split('T')[0]
+// console.log(today)
 
 const QUERY = gql`
 {
-  dailyRecords(where: {date: "2011-01-13"}) {
+  dailyRecords(where: {date: "2022-06-18"}) {
     date
     n
     p
@@ -87,21 +87,6 @@ export default function Home( {posts} ) {
               <p>Rainfall: {data.rainfall}</p>
             </div>
           })} */}
-
-
-
-
-          {/* <div className={styles.card}>
-            <h2>Status &rarr;</h2>
-            <p>Date: {data.date}</p>
-            <p>N: {data.n}</p>
-            <p>P: {data.p}</p>
-            <p>K: {data.k}</p>
-            <p>Humidity: {data.humidity}</p>
-            <p>pH: {data.ph}</p>
-            <p>Rainfall: {data.rainfall}</p>
-          </div> */}
-
 
           {/* <Status/> */}
 

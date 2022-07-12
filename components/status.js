@@ -7,7 +7,7 @@ function Status() {
   var today = (new Date()).getDate()
 
   const QUERY = gql`query {
-    dailyRecords(where: {date: "2011-01-13"}) {
+    dailyRecords(where: {date: "${today}"}) {
       n
       p
       k
